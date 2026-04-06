@@ -98,3 +98,28 @@ h1 {
     width: 100%;
   }
 }
+
+@media (min-width: 1024px) {
+
+  .container {
+    padding: 0 10%;
+    gap: 80px;
+  }
+
+  .left {
+    max-width: 520px;
+  }
+
+  h1 {
+    font-size: 56px;
+  }
+
+  .sub {
+    font-size: 16px;
+  }
+
+  .right img {
+    width: 900px;
+  }
+
+}
