@@ -50,4 +50,27 @@ h1 {
   height:80vh;
   object-fit:contain;
 }
+
+body {
+  font-family: 'Noto Serif JP', serif;
+  color: #111;
+  background: #fff;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 80px;
+}
+
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 80px;
+}
 </style>
