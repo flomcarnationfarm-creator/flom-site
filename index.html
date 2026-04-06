@@ -4,50 +4,82 @@
 <meta charset="UTF-8">
 <title>FloM carnations</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
 
-<body style="
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Noto+Serif+JP:wght@300&display=swap" rel="stylesheet">
+
+<style>
+body {
   margin:0;
-  font-family: serif;
   background:#e5e5e5;
+  font-family:'Noto Serif JP', serif;
+}
+
+.container {
   display:flex;
-  justify-content:center;
-  align-items:center;
   height:100vh;
-">
+  padding:60px;
+  align-items:center;
+  justify-content:space-between;
+}
 
-<div style="
-  text-align:left;
-  max-width:300px;
-">
+.left {
+  max-width:400px;
+}
 
-<h1 style="
+.logo {
+  font-family:'Playfair Display', serif;
+  font-size:26px;
+  margin-bottom:80px;
+}
+
+h1 {
+  font-family:'Playfair Display', serif;
   font-size:42px;
-  margin:0;
-  letter-spacing:1px;
-">
-FloM
-</h1>
+  font-weight:500;
+  line-height:1.4;
+}
 
-<p style="
-  margin-top:10px;
-  font-size:16px;
-  color:#555;
-">
-意図が咲かせる。
-</p>
-
-<a href="#" style="
-  display:inline-block;
+.sub {
   margin-top:20px;
-  padding:10px 16px;
-  border:1px solid #000;
+  font-size:14px;
+  color:#555;
+}
+
+.link {
+  margin-top:40px;
+  display:inline-block;
+  font-size:12px;
+  border-bottom:1px solid #000;
   text-decoration:none;
   color:#000;
-  font-size:14px;
-">
-View more
-</a>
+}
+
+.right img {
+  height:80vh;
+  object-fit:contain;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="left">
+    <div class="logo">FloM carnations</div>
+
+    <h1>意図が咲かせる。</h1>
+
+    <div class="sub">
+      環境と選択の積み重ねで生まれる。
+    </div>
+
+    <a href="#" class="link">Collection →</a>
+  </div>
+
+  <div class="right">
+    <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?q=80&w=1200&auto=format&fit=crop">
+  </div>
 
 </div>
 
