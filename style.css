@@ -1,6 +1,7 @@
 
+
 /* =========================
-   ベース設定
+   ベース
 ========================= */
 body {
   margin: 0;
@@ -17,14 +18,14 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 100vh;
-  padding: 0 10%;
+  padding: 0 6%;
 }
 
 /* =========================
-   左側（テキスト）
+   左（テキスト）
 ========================= */
 .left {
-  max-width: 460px;
+  max-width: 480px;
 }
 
 /* ロゴ */
@@ -37,7 +38,7 @@ body {
 
 /* メインコピー */
 h1 {
-  font-size: 36px;
+  font-size: 42px;
   font-weight: 400;
   letter-spacing: 1px;
   line-height: 1.6;
@@ -46,9 +47,9 @@ h1 {
 
 /* サブコピー */
 .sub {
-  font-size: 13px;
+  font-size: 14px;
   color: #888;
-  line-height: 1.8;
+  line-height: 1.9;
   margin-bottom: 40px;
 }
 
@@ -68,17 +69,17 @@ h1 {
 }
 
 /* =========================
-   右側（画像）
+   右（画像）
 ========================= */
 .right img {
-  width: 600px;
+  width: 750px;
   height: auto;
-  border-radius: 4px;
+  border-radius: 6px;
   object-fit: cover;
 }
 
 /* =========================
-   レスポンシブ（スマホ対応）
+   スマホ
 ========================= */
 @media (max-width: 768px) {
   .container {
