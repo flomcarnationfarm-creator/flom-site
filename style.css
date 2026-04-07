@@ -1,138 +1,358 @@
-/* =========================
-   Base
-========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html,
 body {
-  font-family: 'Noto Serif JP', serif;
-  background-color: #f2f2f2;
-  color: #111;
+  width: 100%;
+  height: 100%;
 }
 
-/* =========================
-   Layout
-========================= */
-.container {
+body {
+  font-family: "Noto Serif JP", serif;
+  background: #d7d3cc;
+  color: #2f2a25;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #d7d3cc;
+}
+
+/* 背景写真 */
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+}
+
+/* 全体を少し落ち着かせる */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(215, 211, 204, 0.16);
+  z-index: 1;
+}
+
+/* 共通で画像の上に出す */
+.site-header,
+.hero-copy,
+.scroll-mark,
+.first-bloom {
+  position: relative;
+  z-index: 2;
+}
+
+/* ヘッダー */
+.site-header {
+  position: absolute;
+  top: 32px;
+  left: 34px;
+  right: 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logo-main {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  line-height: 0.9;
+  color: #f4f1eb;
+  letter-spacing: 0.01em;
+}
+
+.logo-sub {
+  margin-top: 6px;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  color: rgba(244, 241, 235, 0.95);
+}
+
+.menu-wrap {
   display: flex;
   align-items: center;
+  gap: 14px;
+}
+
+.menu-text {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: #f4f1eb;
+}
+
+.menu-button {
+  width: 32px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
-  padding: 0 6%;
-  gap: 40px;
+  cursor: pointer;
 }
 
-/* =========================
-   Left (Text)
-========================= */
-.left {
-  max-width: 420px;
-}
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  letter-spacing: 0.15em;
-  color: #777;
-  margin-bottom: 40px;
-}
-
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-.sub {
-  font-size: 14px;
-  color: #888;
-  line-height: 1.8;
-  margin-bottom: 40px;
-}
-
-.link {
-  font-size: 14px;
-  color: #111;
-  text-decoration: none;
-  border-bottom: 1px solid #111;
-  padding-bottom: 4px;
-  transition: all 0.3s ease;
-}
-
-.link:hover {
-  opacity: 0.5;
-}
-
-/* =========================
-   Right (Image)
-========================= */
-.right img {
-  width: 100%;
-  max-width: 520px;
-  border-radius: 6px;
+.menu-button span {
   display: block;
-  transition: transform 0.6s ease;
+  width: 100%;
+  height: 1px;
+  background: #f4f1eb;
 }
 
-.right img:hover {
-  transform: scale(1.03);
+/* メインコピー */
+.hero-copy {
+  position: absolute;
+  top: 210px;
+  left: 96px;
+  max-width: 470px;
 }
 
-/* =========================
-   PC調整（メイン）
-========================= */
-@media (min-width: 1024px) {
-
-  .container {
-    padding: 0 8%;
-    gap: 60px;
-  }
-
-  .left {
-    max-width: 480px;
-  }
-
-  h1 {
-    font-size: 52px;
-  }
-
-  .right img {
-    width: 700px;
-    transform: translateX(40px);
-  }
-
+.hero-copy h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: 62px;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  color: #2d2824;
 }
 
-/* =========================
-   Mobile
-========================= */
+.jp-copy {
+  margin-top: 42px;
+  font-size: 17px;
+  line-height: 2;
+  letter-spacing: 0.08em;
+  color: #2f2a25;
+}
+
+/* スクロール */
+.scroll-mark {
+  position: absolute;
+  top: 610px;
+  left: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 95px;
+  background: rgba(47, 42, 37, 0.5);
+  margin-bottom: 24px;
+}
+
+.scroll-text {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: #2f2a25;
+}
+
+.scroll-arrow {
+  margin-top: 10px;
+  font-size: 34px;
+  line-height: 1;
+  color: #2f2a25;
+}
+
+/* 下の情報 */
+.first-bloom {
+  position: absolute;
+  left: 96px;
+  bottom: 78px;
+  max-width: 360px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(47, 42, 37, 0.8);
+}
+
+.first-bloom h2 {
+  margin-top: 18px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 54px;
+  font-weight: 400;
+  line-height: 1;
+  color: #2d2824;
+}
+
+.jp-name {
+  margin-top: 12px;
+  font-size: 16px;
+  letter-spacing: 0.16em;
+  color: #2f2a25;
+}
+
+.bloom-copy {
+  margin-top: 30px;
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.08em;
+  color: #2f2a25;
+}
+
+.details-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 34px;
+  padding-bottom: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  color: #2f2a25;
+  border-bottom: 1px solid rgba(47, 42, 37, 0.65);
+}
+
+.details-link span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* タブレット */
+@media (max-width: 1100px) {
+  .hero-copy {
+    top: 170px;
+    left: 56px;
+    max-width: 400px;
+  }
+
+  .hero-copy h1 {
+    font-size: 50px;
+  }
+
+  .jp-copy {
+    font-size: 15px;
+  }
+
+  .scroll-mark {
+    top: 520px;
+    left: 56px;
+  }
+
+  .first-bloom {
+    left: 56px;
+    bottom: 52px;
+    max-width: 320px;
+  }
+
+  .first-bloom h2 {
+    font-size: 44px;
+  }
+}
+
+/* スマホ */
 @media (max-width: 768px) {
-
-  .container {
-    flex-direction: column;
-    height: auto;
-    padding: 60px 20px;
+  .hero {
+    min-height: 100svh;
   }
 
-  .left {
-    max-width: 100%;
+  .hero-image {
+    object-position: 68% center;
   }
 
-  h1 {
-    font-size: 32px;
+  .site-header {
+    top: 24px;
+    left: 20px;
+    right: 20px;
   }
 
-  .right img {
-    width: 100%;
-    max-width: 100%;
-    margin-top: 40px;
-    transform: none;
+  .logo-main {
+    font-size: 28px;
   }
 
+  .logo-sub {
+    font-size: 9px;
+  }
+
+  .menu-text {
+    font-size: 11px;
+  }
+
+  .menu-button {
+    width: 28px;
+    height: 20px;
+  }
+
+  .hero-copy {
+    top: 150px;
+    left: 20px;
+    right: 20px;
+    max-width: 260px;
+  }
+
+  .hero-copy h1 {
+    font-size: 38px;
+    line-height: 1.02;
+  }
+
+  .jp-copy {
+    margin-top: 26px;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .scroll-mark {
+    top: auto;
+    bottom: 270px;
+    left: 20px;
+  }
+
+  .scroll-line {
+    height: 56px;
+    margin-bottom: 14px;
+  }
+
+  .scroll-text {
+    font-size: 10px;
+  }
+
+  .scroll-arrow {
+    font-size: 24px;
+  }
+
+  .first-bloom {
+    left: 20px;
+    right: 20px;
+    bottom: 34px;
+    max-width: 250px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+  }
+
+  .first-bloom h2 {
+    margin-top: 14px;
+    font-size: 34px;
+  }
+
+  .jp-name {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  .bloom-copy {
+    margin-top: 18px;
+    font-size: 12px;
+    line-height: 1.85;
+  }
+
+  .details-link {
+    margin-top: 22px;
+    font-size: 11px;
+    gap: 10px;
+  }
 }
