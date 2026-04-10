@@ -13,8 +13,20 @@
 </head>
 <body>
   <main class="hero">
-    <img src="flom.jpg" alt="FloM carnation" class="hero-image" />
 
+    <!-- 背景スライド -->
+    <div class="hero-bg">
+      <img src="flom1.jpg" alt="" class="bg-slide active">
+      <img src="flom2.jpg" alt="" class="bg-slide">
+      <img src="flom3.jpg" alt="" class="bg-slide">
+      <img src="flom4.jpg" alt="" class="bg-slide">
+      <img src="flom5.jpg" alt="" class="bg-slide">
+    </div>
+
+    <!-- オーバーレイ -->
+    <div class="hero-overlay"></div>
+
+    <!-- ヘッダー -->
     <header class="site-header">
       <div class="logo">
         <div class="logo-main">FloM</div>
@@ -31,6 +43,7 @@
       </div>
     </header>
 
+    <!-- コピー -->
     <section class="hero-copy">
       <h1>
         Grown with intention.<br>
@@ -40,28 +53,33 @@
       <p class="jp-copy">
         ただ作るのではなく、<br>
         環境・水・湿度を設計する。<br>
-        FloMは“完成度”で咲く。
+        FloMは“完成度”で咲う。
       </p>
     </section>
 
+    <!-- スクロール -->
     <div class="scroll-mark">
       <div class="scroll-line"></div>
       <div class="scroll-text">SCROLL</div>
       <div class="scroll-arrow">↓</div>
     </div>
 
+    <!-- 品種情報 -->
     <section class="first-bloom">
       <div class="eyebrow">FIRST BLOOM</div>
-      <h2>Tyson</h2>
-      <div class="jp-name">タイソン</div>
+      <h2 id="flower-name-en">Sakura Minami</h2>
+      <div class="jp-name" id="flower-name-jp">サクラ ミナミ</div>
 
-      <p class="bloom-copy">
+      <p class="bloom-copy" id="flower-copy">
         やわらかな桜色に、繊細な絞りの入る品種。<br>
         静けさの中に、芯の強さがある。
       </p>
 
       <a href="#" class="details-link">VIEW DETAILS <span>→</span></a>
     </section>
+
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
