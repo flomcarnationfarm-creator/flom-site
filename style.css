@@ -1,5 +1,6 @@
 
 
+
 * {
   margin: 0;
   padding: 0;
@@ -22,8 +23,8 @@ body {
 .hero {
   position: relative;
   width: 100%;
-  height: 100svh;
   min-height: 100svh;
+  height: 100svh;
   overflow: hidden;
   background: #d7d3cc;
 }
@@ -41,14 +42,18 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 72% center;
   opacity: 0;
   transform: scale(1.02);
   filter: blur(4px);
   transition:
-    opacity 2.6s ease,
-    transform 5.5s ease,
-    filter 2.6s ease;
+    opacity 2.4s ease,
+    transform 5s ease,
+    filter 2.4s ease;
+}
+
+/* PCでは右側に主役を残す */
+.bg-slide {
+  object-position: 76% center;
 }
 
 .bg-slide.active {
@@ -57,24 +62,31 @@ body {
   filter: blur(0);
 }
 
-/* 上から軽くベール */
+/* 左側の文字可読性を確保 */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to right, rgba(231, 227, 220, 0.24), rgba(231, 227, 220, 0.08)),
-    rgba(210, 205, 196, 0.10);
   z-index: 1;
+  background:
+    linear-gradient(
+      to right,
+      rgba(232, 228, 221, 0.42) 0%,
+      rgba(232, 228, 221, 0.26) 24%,
+      rgba(232, 228, 221, 0.10) 48%,
+      rgba(232, 228, 221, 0.03) 68%,
+      rgba(232, 228, 221, 0.00) 100%
+    ),
+    rgba(214, 209, 201, 0.08);
 }
 
-.site-header,
-.hero-copy,
-.first-bloom {
+.hero-inner {
   position: relative;
   z-index: 2;
+  width: 100%;
+  height: 100%;
 }
 
-/* header */
+/* ヘッダー */
 .site-header {
   position: absolute;
   top: 34px;
@@ -87,7 +99,7 @@ body {
 
 .logo-main {
   font-family: "Cormorant Garamond", serif;
-  font-size: 58px;
+  font-size: 56px;
   line-height: 0.9;
   color: #f4f1eb;
   letter-spacing: 0.01em;
@@ -95,7 +107,7 @@ body {
 
 .logo-sub {
   margin-top: 10px;
-  font-size: 17px;
+  font-size: 16px;
   letter-spacing: 0.22em;
   color: rgba(244, 241, 235, 0.96);
 }
@@ -132,87 +144,87 @@ body {
   background: #f4f1eb;
 }
 
-/* 左メインコピー */
+/* メインコピー */
 .hero-copy {
   position: absolute;
-  left: 46px;
-  top: 23vh;
-  width: min(42vw, 560px);
+  left: 42px;
+  top: 22vh;
+  width: min(39vw, 520px);
 }
 
 .hero-copy h1 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
-  font-size: clamp(58px, 5.4vw, 92px);
-  line-height: 0.96;
-  letter-spacing: -0.015em;
+  font-size: clamp(56px, 5vw, 86px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
   color: #2d2824;
 }
 
 .jp-copy {
-  margin-top: 42px;
-  font-size: clamp(15px, 1.12vw, 19px);
+  margin-top: 34px;
+  font-size: clamp(15px, 1.05vw, 18px);
   line-height: 1.95;
   letter-spacing: 0.08em;
   color: #2f2a25;
 }
 
-/* 左下品種情報 */
+/* 品種情報 */
 .first-bloom {
   position: absolute;
-  left: 46px;
-  bottom: 54px;
-  width: min(33vw, 420px);
+  left: 42px;
+  bottom: 44px;
+  width: min(31vw, 390px);
 }
 
 .eyebrow {
-  font-size: 15px;
+  font-size: 13px;
   letter-spacing: 0.18em;
   color: rgba(47, 42, 37, 0.82);
 }
 
 .first-bloom h2 {
-  margin-top: 22px;
+  margin-top: 18px;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(56px, 4vw, 72px);
+  font-size: clamp(44px, 3.8vw, 66px);
   font-weight: 400;
   line-height: 1;
   color: #2d2824;
-  transition: opacity 0.8s ease;
+  transition: opacity 0.7s ease;
 }
 
 .jp-name {
-  margin-top: 14px;
-  font-size: 18px;
+  margin-top: 12px;
+  font-size: 16px;
   letter-spacing: 0.14em;
   color: #2f2a25;
-  transition: opacity 0.8s ease;
+  transition: opacity 0.7s ease;
 }
 
 .bloom-copy {
-  margin-top: 28px;
-  font-size: clamp(14px, 1.05vw, 18px);
-  line-height: 1.95;
+  margin-top: 22px;
+  font-size: clamp(14px, 0.95vw, 17px);
+  line-height: 1.9;
   letter-spacing: 0.08em;
   color: #2f2a25;
-  transition: opacity 0.8s ease;
+  transition: opacity 0.7s ease;
 }
 
 .details-link {
   display: inline-flex;
   align-items: center;
-  gap: 18px;
-  margin-top: 30px;
-  padding-bottom: 10px;
+  gap: 16px;
+  margin-top: 24px;
+  padding-bottom: 8px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 0.16em;
   color: #2f2a25;
   border-bottom: 1px solid rgba(47, 42, 37, 0.65);
 }
 
 .details-link span {
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1;
 }
 
@@ -220,132 +232,126 @@ body {
   opacity: 0;
 }
 
-/* ===== ノートPC・小さめPC ===== */
+/* ===== 小さめPC ===== */
 @media (max-width: 1366px) {
   .site-header {
     top: 28px;
-    left: 34px;
-    right: 34px;
+    left: 30px;
+    right: 30px;
   }
 
   .logo-main {
-    font-size: 50px;
+    font-size: 48px;
   }
 
   .logo-sub {
-    font-size: 14px;
+    font-size: 13px;
     margin-top: 8px;
   }
 
-  .menu-text {
-    font-size: 13px;
-  }
-
   .hero-copy {
-    left: 34px;
-    top: 21vh;
-    width: min(42vw, 500px);
+    left: 30px;
+    top: 20vh;
+    width: min(41vw, 470px);
   }
 
   .hero-copy h1 {
-    font-size: clamp(52px, 5vw, 78px);
+    font-size: clamp(48px, 4.6vw, 72px);
   }
 
   .jp-copy {
-    margin-top: 28px;
-    font-size: 16px;
+    margin-top: 24px;
+    font-size: 15px;
   }
 
   .first-bloom {
-    left: 34px;
-    bottom: 40px;
-    width: min(34vw, 360px);
-  }
-
-  .eyebrow {
-    font-size: 13px;
+    left: 30px;
+    bottom: 30px;
+    width: min(31vw, 330px);
   }
 
   .first-bloom h2 {
-    font-size: clamp(46px, 3.6vw, 62px);
+    font-size: clamp(38px, 3vw, 54px);
   }
 
   .jp-name {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .bloom-copy {
-    margin-top: 20px;
-    font-size: 15px;
-    line-height: 1.85;
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.8;
   }
 
   .details-link {
-    margin-top: 20px;
-    font-size: 13px;
+    margin-top: 18px;
+    font-size: 12px;
   }
 }
 
 /* ===== 高さが低いPC ===== */
 @media (max-height: 760px) and (min-width: 769px) {
   .hero-copy {
-    top: 18vh;
+    top: 16vh;
+    width: min(39vw, 430px);
   }
 
   .hero-copy h1 {
-    font-size: clamp(48px, 4.3vw, 68px);
+    font-size: clamp(42px, 4vw, 62px);
   }
 
   .jp-copy {
-    margin-top: 22px;
+    margin-top: 18px;
     font-size: 14px;
     line-height: 1.8;
   }
 
   .first-bloom {
-    bottom: 28px;
-    width: min(31vw, 320px);
+    bottom: 22px;
+    width: min(28vw, 290px);
   }
 
   .eyebrow {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .first-bloom h2 {
-    font-size: clamp(38px, 3vw, 52px);
+    font-size: clamp(34px, 2.7vw, 46px);
   }
 
   .jp-name {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .bloom-copy {
-    margin-top: 14px;
-    font-size: 13px;
+    margin-top: 12px;
+    font-size: 12px;
     line-height: 1.7;
   }
 
   .details-link {
     margin-top: 14px;
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 
 /* ===== スマホ縦 ===== */
 @media (max-width: 768px) and (orientation: portrait) {
-  .hero {
-    height: 100svh;
-    min-height: 100svh;
-  }
-
   .bg-slide {
-    object-position: 78% center;
+    object-position: 83% center;
   }
 
   .hero-overlay {
     background:
-      linear-gradient(to right, rgba(231, 227, 220, 0.28), rgba(231, 227, 220, 0.10)),
-      rgba(210, 205, 196, 0.12);
+      linear-gradient(
+        to right,
+        rgba(232, 228, 221, 0.50) 0%,
+        rgba(232, 228, 221, 0.28) 32%,
+        rgba(232, 228, 221, 0.08) 60%,
+        rgba(232, 228, 221, 0.00) 100%
+      ),
+      rgba(214, 209, 201, 0.08);
   }
 
   .site-header {
@@ -355,13 +361,13 @@ body {
   }
 
   .logo-main {
-    font-size: 36px;
+    font-size: 34px;
   }
 
   .logo-sub {
     margin-top: 6px;
     font-size: 10px;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.20em;
   }
 
   .menu-wrap {
@@ -380,27 +386,25 @@ body {
 
   .hero-copy {
     left: 20px;
-    right: 20px;
-    top: 20vh;
-    width: min(72vw, 320px);
+    top: 18vh;
+    width: min(66vw, 300px);
   }
 
   .hero-copy h1 {
-    font-size: clamp(38px, 9vw, 58px);
-    line-height: 1.02;
+    font-size: clamp(34px, 8vw, 52px);
+    line-height: 1.03;
   }
 
   .jp-copy {
-    margin-top: 24px;
+    margin-top: 22px;
     font-size: 12px;
     line-height: 1.85;
   }
 
   .first-bloom {
     left: 20px;
-    right: 20px;
     bottom: 28px;
-    width: min(72vw, 310px);
+    width: min(66vw, 280px);
   }
 
   .eyebrow {
@@ -408,8 +412,8 @@ body {
   }
 
   .first-bloom h2 {
-    margin-top: 14px;
-    font-size: clamp(34px, 8vw, 52px);
+    margin-top: 12px;
+    font-size: clamp(32px, 7vw, 46px);
   }
 
   .jp-name {
@@ -418,13 +422,13 @@ body {
   }
 
   .bloom-copy {
-    margin-top: 16px;
+    margin-top: 14px;
     font-size: 12px;
     line-height: 1.8;
   }
 
   .details-link {
-    margin-top: 18px;
+    margin-top: 16px;
     font-size: 11px;
     gap: 10px;
   }
@@ -432,29 +436,30 @@ body {
 
 /* ===== スマホ横 ===== */
 @media (max-width: 932px) and (orientation: landscape) {
-  .hero {
-    height: 100svh;
-    min-height: 100svh;
-  }
-
   .bg-slide {
-    object-position: 82% center;
+    object-position: 85% center;
   }
 
   .hero-overlay {
     background:
-      linear-gradient(to right, rgba(231, 227, 220, 0.26), rgba(231, 227, 220, 0.08)),
-      rgba(210, 205, 196, 0.10);
+      linear-gradient(
+        to right,
+        rgba(232, 228, 221, 0.52) 0%,
+        rgba(232, 228, 221, 0.26) 28%,
+        rgba(232, 228, 221, 0.06) 54%,
+        rgba(232, 228, 221, 0.00) 100%
+      ),
+      rgba(214, 209, 201, 0.06);
   }
 
   .site-header {
-    top: 18px;
-    left: 18px;
-    right: 18px;
+    top: 14px;
+    left: 16px;
+    right: 16px;
   }
 
   .logo-main {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .logo-sub {
@@ -465,7 +470,7 @@ body {
 
   .menu-wrap {
     gap: 10px;
-    margin-top: 4px;
+    margin-top: 3px;
   }
 
   .menu-text {
@@ -478,53 +483,50 @@ body {
   }
 
   .hero-copy {
-    left: 18px;
-    top: 18vh;
-    width: min(48vw, 300px);
+    left: 16px;
+    top: 20vh;
+    width: min(42vw, 250px);
   }
 
   .hero-copy h1 {
-    font-size: clamp(28px, 5vw, 40px);
-    line-height: 1.04;
+    font-size: clamp(24px, 4.2vw, 34px);
+    line-height: 1.02;
   }
 
   .jp-copy {
-    margin-top: 16px;
-    font-size: 10px;
-    line-height: 1.7;
+    margin-top: 12px;
+    font-size: 9px;
+    line-height: 1.6;
   }
 
   .first-bloom {
-    left: 18px;
-    bottom: 18px;
-    width: min(40vw, 250px);
+    left: 16px;
+    bottom: 14px;
+    width: min(34vw, 210px);
   }
 
   .eyebrow {
     font-size: 8px;
-    letter-spacing: 0.16em;
   }
 
   .first-bloom h2 {
-    margin-top: 10px;
-    font-size: clamp(24px, 4vw, 34px);
+    margin-top: 8px;
+    font-size: clamp(22px, 3.3vw, 30px);
   }
 
   .jp-name {
-    margin-top: 5px;
-    font-size: 9px;
+    margin-top: 4px;
+    font-size: 8px;
   }
 
   .bloom-copy {
-    margin-top: 10px;
-    font-size: 9px;
-    line-height: 1.55;
+    display: none;
   }
 
   .details-link {
     margin-top: 10px;
-    font-size: 9px;
+    font-size: 8px;
     gap: 8px;
-    padding-bottom: 6px;
+    padding-bottom: 5px;
   }
 }
