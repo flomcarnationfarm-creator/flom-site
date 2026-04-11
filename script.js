@@ -7,14 +7,14 @@ const flowerCopy = document.getElementById("flower-copy");
 
 const flowerData = [
   {
-    en: "Sakura Minami",
-    jp: "サクラ ミナミ",
-    copy: "やわらかな桜色に、繊細な絞りの入る品種。<br>静けさの中に、芯の強さがある。"
-  },
-  {
     en: "Tyson",
     jp: "タイソン",
     copy: "深い色の奥に、強い輪郭を持つ品種。<br>意図を隠さず、静かに立つ。"
+  },
+  {
+    en: "Sakura Minami",
+    jp: "サクラ ミナミ",
+    copy: "やわらかな桜色に、繊細な絞りの入る品種。<br>静けさの中に、芯の強さがある。"
   },
   {
     en: "Brisa",
@@ -24,12 +24,12 @@ const flowerData = [
   {
     en: "Moonlight",
     jp: "ムーンライト",
-    copy: "やわらかな光を抱えたような色合い。<br>静けさの中で、気配だけを残す。"
+    copy: "やわらかな光を抱えたような色合い。<br>気配だけを静かに残す。"
   },
   {
     en: "Momoka",
     jp: "モモカ",
-    copy: "甘さに寄りすぎず、芯を保つ色。<br>選択の積み重ねが、輪郭になる。"
+    copy: "柔らかさの中に、輪郭を保つ色。<br>選択の積み重ねが、完成度になる。"
   }
 ];
 
@@ -48,14 +48,12 @@ function updateText(index) {
     flowerNameEn.classList.remove("fade-text");
     flowerNameJp.classList.remove("fade-text");
     flowerCopy.classList.remove("fade-text");
-  }, 500);
+  }, 350);
 }
 
 setInterval(() => {
   slides[current].classList.remove("active");
-
   current = (current + 1) % slides.length;
-
   slides[current].classList.add("active");
   updateText(current);
 }, 6500);
