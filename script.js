@@ -48,7 +48,7 @@ function updateText(index) {
     flowerNameEn.classList.remove("fade-text");
     flowerNameJp.classList.remove("fade-text");
     flowerCopy.classList.remove("fade-text");
-  }, 350);
+  }, 300);
 }
 
 setInterval(() => {
