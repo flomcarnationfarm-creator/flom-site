@@ -1,20 +1,20 @@
 
 
-const slides = document.querySelectorAll(".bg-slide");
+onst slides = document.querySelectorAll(".bg-slide");
 const flowerNameEn = document.getElementById("flower-name-en");
 const flowerNameJp = document.getElementById("flower-name-jp");
 const flowerCopy = document.getElementById("flower-copy");
 
 const flowerData = [
   {
-    en: "Tyson",
-    jp: "タイソン",
-    copy: "深い色の奥に、強い輪郭を持つ品種。<br>意図を隠さず、静かに立つ。"
-  },
-  {
     en: "Sakura Minami",
     jp: "サクラ ミナミ",
     copy: "やわらかな桜色に、繊細な絞りの入る品種。<br>静けさの中に、芯の強さがある。"
+  },
+  {
+    en: "Tyson",
+    jp: "タイソン",
+    copy: "深い色の奥に、強い輪郭を持つ品種。<br>意図を隠さず、静かに立つ。"
   },
   {
     en: "Brisa",
