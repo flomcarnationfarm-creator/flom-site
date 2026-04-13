@@ -14,11 +14,30 @@
 <body>
   <main class="hero">
     <div class="hero-bg">
-      <img src="flom1.jpg" alt="" class="bg-slide active" style="--pc-pos: 76% center; --sp-pos: 74% center; --land-pos: 82% center;">
-      <img src="flom2.jpg" alt="" class="bg-slide" style="--pc-pos: 76% center; --sp-pos: 74% center; --land-pos: 82% center;">
-      <img src="flom3.jpg" alt="" class="bg-slide" style="--pc-pos: 74% center; --sp-pos: 72% center; --land-pos: 80% center;">
-      <img src="flom4.jpg" alt="" class="bg-slide" style="--pc-pos: 78% center; --sp-pos: 76% center; --land-pos: 84% center;">
-      <img src="flom5.jpg" alt="" class="bg-slide" style="--pc-pos: 77% center; --sp-pos: 75% center; --land-pos: 83% center;">
+      <picture class="bg-picture active">
+        <source media="(max-width: 768px) and (orientation: portrait)" srcset="flom-sp1.jpg">
+        <img src="flom1.jpg" alt="" class="bg-slide">
+      </picture>
+
+      <picture class="bg-picture">
+        <source media="(max-width: 768px) and (orientation: portrait)" srcset="flom-sp2.jpg">
+        <img src="flom2.jpg" alt="" class="bg-slide">
+      </picture>
+
+      <picture class="bg-picture">
+        <source media="(max-width: 768px) and (orientation: portrait)" srcset="flom-sp3.jpg">
+        <img src="flom3.jpg" alt="" class="bg-slide">
+      </picture>
+
+      <picture class="bg-picture">
+        <source media="(max-width: 768px) and (orientation: portrait)" srcset="flom-sp4.jpg">
+        <img src="flom4.jpg" alt="" class="bg-slide">
+      </picture>
+
+      <picture class="bg-picture">
+        <source media="(max-width: 768px) and (orientation: portrait)" srcset="flom-sp5.jpg">
+        <img src="flom5.jpg" alt="" class="bg-slide">
+      </picture>
     </div>
 
     <div class="hero-overlay"></div>
