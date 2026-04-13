@@ -33,24 +33,23 @@ body {
   z-index: 0;
 }
 
-.bg-slide {
+.bg-picture {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: var(--pc-pos, 76% center);
   opacity: 0;
-  transform: scale(1.02);
-  filter: blur(4px);
-  transition:
-    opacity 2.4s ease,
-    transform 5s ease,
-    filter 2.4s ease;
+  transition: opacity 2.2s ease;
 }
 
-.bg-slide.active {
+.bg-picture.active {
   opacity: 1;
+}
+
+.bg-slide {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
   transform: scale(1);
   filter: blur(0);
 }
@@ -63,13 +62,13 @@ body {
   background:
     linear-gradient(
       to right,
-      rgba(232, 228, 221, 0.40) 0%,
-      rgba(232, 228, 221, 0.24) 24%,
-      rgba(232, 228, 221, 0.10) 46%,
+      rgba(232, 228, 221, 0.34) 0%,
+      rgba(232, 228, 221, 0.20) 24%,
+      rgba(232, 228, 221, 0.08) 46%,
       rgba(232, 228, 221, 0.02) 66%,
       rgba(232, 228, 221, 0.00) 100%
     ),
-    rgba(214, 209, 201, 0.04);
+    rgba(214, 209, 201, 0.02);
 }
 
 .hero-inner {
@@ -333,32 +332,23 @@ body {
   }
 }
 
-/* ===== スマホ縦 ===== */
+/* ===== スマホ縦：別写真前提 ===== */
 @media (max-width: 768px) and (orientation: portrait) {
   .hero {
     height: 100svh;
     min-height: 100svh;
   }
 
-  .bg-slide {
-    object-position: var(--sp-pos, 74% center);
-  }
-
-  .bg-slide.active {
-    transform: scale(1.08);
-  }
-
   .hero-overlay {
     background:
       linear-gradient(
         to right,
-        rgba(232, 228, 221, 0.42) 0%,
-        rgba(232, 228, 221, 0.28) 26%,
-        rgba(232, 228, 221, 0.12) 48%,
-        rgba(232, 228, 221, 0.02) 68%,
-        rgba(232, 228, 221, 0.00) 100%
+        rgba(232, 228, 221, 0.16) 0%,
+        rgba(232, 228, 221, 0.10) 22%,
+        rgba(232, 228, 221, 0.04) 42%,
+        rgba(232, 228, 221, 0.00) 60%
       ),
-      rgba(214, 209, 201, 0.03);
+      rgba(214, 209, 201, 0.01);
   }
 
   .site-header {
@@ -441,22 +431,14 @@ body {
   }
 }
 
-/* ===== スマホ横 ===== */
+/* ===== スマホ横：PC写真流用 ===== */
 @media (max-width: 932px) and (orientation: landscape) {
-  .bg-slide {
-    object-position: var(--land-pos, 82% center);
-  }
-
-  .bg-slide.active {
-    transform: scale(1.04);
-  }
-
   .hero-overlay {
     background:
       linear-gradient(
         to right,
-        rgba(232, 228, 221, 0.44) 0%,
-        rgba(232, 228, 221, 0.20) 28%,
+        rgba(232, 228, 221, 0.42) 0%,
+        rgba(232, 228, 221, 0.18) 28%,
         rgba(232, 228, 221, 0.06) 52%,
         rgba(232, 228, 221, 0.00) 100%
       ),
