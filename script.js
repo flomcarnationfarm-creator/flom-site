@@ -1,6 +1,6 @@
 
 
-onst slides = document.querySelectorAll(".bg-slide");
+const slides = document.querySelectorAll(".bg-picture");
 const flowerNameEn = document.getElementById("flower-name-en");
 const flowerNameJp = document.getElementById("flower-name-jp");
 const flowerCopy = document.getElementById("flower-copy");
